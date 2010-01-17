@@ -25,24 +25,24 @@ Gem::Specification.new do |s|
     if Gem::Version.new(Gem::RubyGemsVersion) >= Gem::Version.new('1.2.0') then
       s.add_runtime_dependency(%q<activesupport>, ["= 3.0.pre"])
       s.add_runtime_dependency(%q<activemodel>, ["= 3.0.pre"])
-      s.add_runtime_dependency(%q<rack>, ["~> 1.1.0"])
+      s.add_runtime_dependency(%q<rack>, ["~> 1.0.1"])
       s.add_runtime_dependency(%q<rack-test>, ["~> 0.5.0"])
-      s.add_runtime_dependency(%q<rack-mount>, ["~> 0.4.0"])
+      s.add_runtime_dependency(%q<rack-mount>, ["~> 0.0.1"])
       s.add_runtime_dependency(%q<erubis>, ["~> 2.6.5"])
     else
       s.add_dependency(%q<activesupport>, ["= 3.0.pre"])
       s.add_dependency(%q<activemodel>, ["= 3.0.pre"])
-      s.add_dependency(%q<rack>, ["~> 1.1.0"])
+      s.add_dependency(%q<rack>, ["~> 1.0.1"])
       s.add_dependency(%q<rack-test>, ["~> 0.5.0"])
-      s.add_dependency(%q<rack-mount>, ["~> 0.4.0"])
+      s.add_dependency(%q<rack-mount>, ["~> 0.0.1"])
       s.add_dependency(%q<erubis>, ["~> 2.6.5"])
     end
   else
     s.add_dependency(%q<activesupport>, ["= 3.0.pre"])
     s.add_dependency(%q<activemodel>, ["= 3.0.pre"])
-    s.add_dependency(%q<rack>, ["~> 1.1.0"])
+    s.add_dependency(%q<rack>, ["~> 1.0.1"])
     s.add_dependency(%q<rack-test>, ["~> 0.5.0"])
-    s.add_dependency(%q<rack-mount>, ["~> 0.4.0"])
+    s.add_dependency(%q<rack-mount>, ["~> 0.0.1"])
     s.add_dependency(%q<erubis>, ["~> 2.6.5"])
   end
 end

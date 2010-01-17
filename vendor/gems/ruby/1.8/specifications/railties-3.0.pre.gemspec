@@ -13,7 +13,7 @@ Gem::Specification.new do |s|
 }
   s.email = %q{david@loudthinking.com}
   s.executables = ["rails"]
-  s.files = ["README", "lib/tasks", "lib/tasks/.gitkeep", "bin/rails"]
+  s.files = ["README", "bin/erubis", "bin/rackup", "bin/rails", "bin/rake", "bin/rg", "lib/tasks", "lib/tasks/.gitkeep"]
   s.homepage = %q{http://www.rubyonrails.org}
   s.rdoc_options = ["--exclude", "."]
   s.require_paths = ["lib"]

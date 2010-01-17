@@ -16,6 +16,7 @@ gem "rails", "3.0.pre"
 
 ## Bundle gems used only in certain environments:
 # gem "rspec", :only => :test
-# only :test do
-#   gem "webrat"
-# end
+
+only :test do
+  gem 'redgreen', '~> 1.2.2'
+end

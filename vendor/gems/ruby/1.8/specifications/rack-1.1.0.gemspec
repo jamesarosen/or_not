@@ -19,7 +19,7 @@ Also see http://rack.rubyforge.org.
   s.email = %q{chneukirchen@gmail.com}
   s.executables = ["rackup"]
   s.extra_rdoc_files = ["README", "SPEC", "KNOWN-ISSUES"]
-  s.files = ["lib/tasks", "COPYING", "KNOWN-ISSUES", "rack.gemspec", "RDOX", "README", "SPEC", "test/test_helper.rb", "bin/rackup"]
+  s.files = ["bin/erubis", "bin/rackup", "bin/rails", "bin/rake", "bin/rg", "lib/tasks", "COPYING", "KNOWN-ISSUES", "rack.gemspec", "RDOX", "README", "SPEC", "test/test_helper.rb"]
   s.homepage = %q{http://rack.rubyforge.org}
   s.require_paths = ["lib"]
   s.rubyforge_project = %q{rack}

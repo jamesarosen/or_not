@@ -24,13 +24,10 @@ Gem::Specification.new do |s|
 
     if Gem::Version.new(Gem::RubyGemsVersion) >= Gem::Version.new('1.2.0') then
       s.add_runtime_dependency(%q<actionpack>, ["= 3.0.pre"])
-      s.add_runtime_dependency(%q<mail>, ["~> 1.6.0"])
     else
       s.add_dependency(%q<actionpack>, ["= 3.0.pre"])
-      s.add_dependency(%q<mail>, ["~> 1.6.0"])
     end
   else
     s.add_dependency(%q<actionpack>, ["= 3.0.pre"])
-    s.add_dependency(%q<mail>, ["~> 1.6.0"])
   end
 end

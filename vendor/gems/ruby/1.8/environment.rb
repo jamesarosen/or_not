@@ -8,40 +8,42 @@ module Bundler
 
   $LOAD_PATH.unshift File.expand_path("#{dir}/gems/i18n-0.3.3/bin")
   $LOAD_PATH.unshift File.expand_path("#{dir}/gems/i18n-0.3.3/lib")
-  $LOAD_PATH.unshift File.expand_path("#{dir}/../../../../../rails/activesupport/bin")
-  $LOAD_PATH.unshift File.expand_path("#{dir}/../../../../../rails/activesupport/lib")
+  $LOAD_PATH.unshift File.expand_path("#{dir}/../../../rails/activesupport/bin")
+  $LOAD_PATH.unshift File.expand_path("#{dir}/../../../rails/activesupport/lib")
+  $LOAD_PATH.unshift File.expand_path("#{dir}/gems/redgreen-1.2.2/bin")
+  $LOAD_PATH.unshift File.expand_path("#{dir}/gems/redgreen-1.2.2/lib")
   $LOAD_PATH.unshift File.expand_path("#{dir}/dirs/arel/bin")
   $LOAD_PATH.unshift File.expand_path("#{dir}/dirs/arel/lib")
+  $LOAD_PATH.unshift File.expand_path("#{dir}/../../../rails/activemodel/bin")
+  $LOAD_PATH.unshift File.expand_path("#{dir}/../../../rails/activemodel/lib")
   $LOAD_PATH.unshift File.expand_path("#{dir}/dirs/rack/bin")
   $LOAD_PATH.unshift File.expand_path("#{dir}/dirs/rack/lib")
   $LOAD_PATH.unshift File.expand_path("#{dir}/gems/rack-test-0.5.3/bin")
   $LOAD_PATH.unshift File.expand_path("#{dir}/gems/rack-test-0.5.3/lib")
   $LOAD_PATH.unshift File.expand_path("#{dir}/gems/rack-mount-0.4.5/bin")
   $LOAD_PATH.unshift File.expand_path("#{dir}/gems/rack-mount-0.4.5/lib")
-  $LOAD_PATH.unshift File.expand_path("#{dir}/../../../../../rails/activemodel/bin")
-  $LOAD_PATH.unshift File.expand_path("#{dir}/../../../../../rails/activemodel/lib")
   $LOAD_PATH.unshift File.expand_path("#{dir}/gems/abstract-1.0.0/bin")
   $LOAD_PATH.unshift File.expand_path("#{dir}/gems/abstract-1.0.0/lib")
   $LOAD_PATH.unshift File.expand_path("#{dir}/gems/erubis-2.6.5/bin")
   $LOAD_PATH.unshift File.expand_path("#{dir}/gems/erubis-2.6.5/lib")
-  $LOAD_PATH.unshift File.expand_path("#{dir}/../../../../../rails/actionpack/bin")
-  $LOAD_PATH.unshift File.expand_path("#{dir}/../../../../../rails/actionpack/lib")
+  $LOAD_PATH.unshift File.expand_path("#{dir}/../../../rails/actionpack/bin")
+  $LOAD_PATH.unshift File.expand_path("#{dir}/../../../rails/actionpack/lib")
   $LOAD_PATH.unshift File.expand_path("#{dir}/gems/mime-types-1.16/bin")
   $LOAD_PATH.unshift File.expand_path("#{dir}/gems/mime-types-1.16/lib")
   $LOAD_PATH.unshift File.expand_path("#{dir}/gems/mail-1.6.0/bin")
   $LOAD_PATH.unshift File.expand_path("#{dir}/gems/mail-1.6.0/lib")
-  $LOAD_PATH.unshift File.expand_path("#{dir}/../../../../../rails/actionmailer/bin")
-  $LOAD_PATH.unshift File.expand_path("#{dir}/../../../../../rails/actionmailer/lib")
+  $LOAD_PATH.unshift File.expand_path("#{dir}/../../../rails/actionmailer/bin")
+  $LOAD_PATH.unshift File.expand_path("#{dir}/../../../rails/actionmailer/lib")
   $LOAD_PATH.unshift File.expand_path("#{dir}/gems/rake-0.8.7/bin")
   $LOAD_PATH.unshift File.expand_path("#{dir}/gems/rake-0.8.7/lib")
-  $LOAD_PATH.unshift File.expand_path("#{dir}/../../../../../rails/railties/bin")
-  $LOAD_PATH.unshift File.expand_path("#{dir}/../../../../../rails/railties/lib")
-  $LOAD_PATH.unshift File.expand_path("#{dir}/../../../../../rails/activerecord/bin")
-  $LOAD_PATH.unshift File.expand_path("#{dir}/../../../../../rails/activerecord/lib")
-  $LOAD_PATH.unshift File.expand_path("#{dir}/../../../../../rails/activeresource/bin")
-  $LOAD_PATH.unshift File.expand_path("#{dir}/../../../../../rails/activeresource/lib")
-  $LOAD_PATH.unshift File.expand_path("#{dir}/../../../../../rails/bin")
-  $LOAD_PATH.unshift File.expand_path("#{dir}/../../../../../rails/lib")
+  $LOAD_PATH.unshift File.expand_path("#{dir}/../../../rails/railties/bin")
+  $LOAD_PATH.unshift File.expand_path("#{dir}/../../../rails/railties/lib")
+  $LOAD_PATH.unshift File.expand_path("#{dir}/../../../rails/activerecord/bin")
+  $LOAD_PATH.unshift File.expand_path("#{dir}/../../../rails/activerecord/lib")
+  $LOAD_PATH.unshift File.expand_path("#{dir}/../../../rails/activeresource/bin")
+  $LOAD_PATH.unshift File.expand_path("#{dir}/../../../rails/activeresource/lib")
+  $LOAD_PATH.unshift File.expand_path("#{dir}/../../../rails/bin")
+  $LOAD_PATH.unshift File.expand_path("#{dir}/../../../rails/lib")
 
   @gemfile = "#{dir}/../../../../Gemfile"
 
@@ -52,16 +54,18 @@ module Bundler
   @bundled_specs["i18n"].loaded_from = "#{dir}/specifications/i18n-0.3.3.gemspec"
   @bundled_specs["activesupport"] = eval(File.read("#{dir}/specifications/activesupport-3.0.pre.gemspec"))
   @bundled_specs["activesupport"].loaded_from = "#{dir}/specifications/activesupport-3.0.pre.gemspec"
+  @bundled_specs["redgreen"] = eval(File.read("#{dir}/specifications/redgreen-1.2.2.gemspec"))
+  @bundled_specs["redgreen"].loaded_from = "#{dir}/specifications/redgreen-1.2.2.gemspec"
   @bundled_specs["arel"] = eval(File.read("#{dir}/specifications/arel-0.2.pre.gemspec"))
   @bundled_specs["arel"].loaded_from = "#{dir}/specifications/arel-0.2.pre.gemspec"
+  @bundled_specs["activemodel"] = eval(File.read("#{dir}/specifications/activemodel-3.0.pre.gemspec"))
+  @bundled_specs["activemodel"].loaded_from = "#{dir}/specifications/activemodel-3.0.pre.gemspec"
   @bundled_specs["rack"] = eval(File.read("#{dir}/specifications/rack-1.1.0.gemspec"))
   @bundled_specs["rack"].loaded_from = "#{dir}/specifications/rack-1.1.0.gemspec"
   @bundled_specs["rack-test"] = eval(File.read("#{dir}/specifications/rack-test-0.5.3.gemspec"))
   @bundled_specs["rack-test"].loaded_from = "#{dir}/specifications/rack-test-0.5.3.gemspec"
   @bundled_specs["rack-mount"] = eval(File.read("#{dir}/specifications/rack-mount-0.4.5.gemspec"))
   @bundled_specs["rack-mount"].loaded_from = "#{dir}/specifications/rack-mount-0.4.5.gemspec"
-  @bundled_specs["activemodel"] = eval(File.read("#{dir}/specifications/activemodel-3.0.pre.gemspec"))
-  @bundled_specs["activemodel"].loaded_from = "#{dir}/specifications/activemodel-3.0.pre.gemspec"
   @bundled_specs["abstract"] = eval(File.read("#{dir}/specifications/abstract-1.0.0.gemspec"))
   @bundled_specs["abstract"].loaded_from = "#{dir}/specifications/abstract-1.0.0.gemspec"
   @bundled_specs["erubis"] = eval(File.read("#{dir}/specifications/erubis-2.6.5.gemspec"))
