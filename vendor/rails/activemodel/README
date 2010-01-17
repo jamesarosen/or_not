@@ -1,0 +1,57 @@
+= Active Model - defined interfaces for Rails
+
+Prior to Rails 3.0, if a plugin or gem developer wanted to be able to have
+an object interact with Action Pack helpers, it was required to either
+copy chunks of code from Rails, or monkey patch entire helpers to make them
+handle objects that did not look like Active Record.  This generated code
+duplication and fragile applications that broke on upgrades.
+
+Active Model is a solution for this problem.
+
+Active Model provides a known set of interfaces that your objects can implement
+to then present a common interface to the Action Pack helpers.  You can include
+functionality from the following modules:
+
+* Adding callbacks to your class
+
+   class MyClass
+     extend ActiveModel::Callbacks
+     define_model_callbacks :create
+
+     def create
+       _run_create_callbacks do
+         # Your create action methods here
+       end
+     end
+   end
+   
+   ...gives you before_create, around_create and after_create class methods that
+   wrap your create method.
+   
+  {Learn more}[link:classes/ActiveModel/CallBacks.html]
+
+* For classes that already look like an Active Record object
+
+    class MyClass
+      include ActiveModel::Conversion
+    end
+    
+    ...returns the class itself when sent :to_model
+
+* Tracking changes in your object
+
+    Provides all the value tracking features implemented by ActiveRecord...
+    
+    person = Person.new
+    person.name # => nil
+    person.changed? # => false
+    person.name = 'bob'
+    person.changed? # => true
+    person.changed # => ['name']
+    person.changes # => { 'name' => [nil, 'bob'] }
+    person.name = 'robert'
+    person.save
+    person.previous_changes # => {'name' => ['bob, 'robert']}
+
+  {Learn more}[link:classes/ActiveModel/Dirty.html]
+

@@ -1,0 +1,7 @@
+    mysql:
+      mysql-dir: /usr/local/mysql
+      mysql-lib: /usr/local/mysql/lib
+      mysql-include: /usr/local/mysql/include
+    pg:
+      pgsql-include: /Library/PostgreSQL/8.4/include
+      with-pgsql-lib: /Library/PostgreSQL/8.4/lib
