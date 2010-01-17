@@ -9,6 +9,7 @@ en:
       help: "I don't get it. What's going on here?"
       previous: '&laquo; Previous'
       next: 'Next &raquo;'
+      new: "New inquiry"
     new:
       title: "Not sure whether it's a filing cabinet or not?"
       submit: "Poll the audience"

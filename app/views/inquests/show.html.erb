@@ -12,3 +12,4 @@
 <%- if @inquest.successor.present? -%>
   <%= link_to t('inquests.show.next'), @inquest.successor %>
 <%- end -%>
+<%= link_to t('inquests.show.new'), new_inquest_path %>
