@@ -2,6 +2,7 @@ PantsOrNot::Application.routes.draw do |map|
   match '/' => 'pages#home', :as => :root
   match '/index.html' => 'pages#home'
   match '/about(.html)' => 'pages#about', :as => :about
+  match '/(:path(.:format))' => 'pages#not_found'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
