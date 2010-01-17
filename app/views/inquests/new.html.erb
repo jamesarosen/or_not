@@ -1,0 +1,13 @@
+<% form_for @inquest do |f| %>
+  <fieldset>
+    <legend><%= t 'inquests.new.title' %></legend>
+    <div>
+      <%= f.label :image_url %>
+      <%= f.text_field :image_url %>
+      <%= f.error_message_on :image_url %>
+    </div>
+    <div>
+      <%= f.submit t('inquests.new.submit') %>
+    </div>
+  </fieldset>
+<% end %>

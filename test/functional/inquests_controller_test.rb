@@ -43,4 +43,31 @@ class InquestsControllerTest < ActionController::TestCase
     assert_select 'a', :text => /next|new/i, :count => 0
   end
   
+  test "showing the form to add an Inquest should be successful" do
+    get :new
+    assert_response :success
+    assert_kind_of Inquest, assigns(:inquest)
+    assert assigns(:inquest).new_record?
+    assert_template '/inquests/new'
+  end
+  
+  test "saving a new Inquest with an image_url should be successful" do
+    post :create, :inquest => { :image_url => 'http://troglodyte.com/fi3m2.jpg' }
+    assert_redirected_to Inquest.last
+  end
+  
+  test "saving a new Inquest with no image_url should fail" do
+    post :create, :inquest => { :image_url => nil }
+    assert_kind_of Inquest, assigns(:inquest)
+    assert assigns(:inquest).errors[:image_url].present?
+    assert_template '/inquests/new'
+  end
+  
+  test "saving a new Inquest with a bad image_url should fail" do
+    post :create, :inquest => { :image_url => 'umlauts rock!' }
+    assert_kind_of Inquest, assigns(:inquest)
+    assert assigns(:inquest).errors[:image_url].present?
+    assert_template '/inquests/new'
+  end
+  
 end

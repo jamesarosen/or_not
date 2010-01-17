@@ -9,6 +9,15 @@ en:
       help: "I don't get it. What's going on here?"
       previous: '&laquo; Previous'
       next: 'Next &raquo;'
+    new:
+      title: "Not sure whether it's a filing cabinet or not?"
+      submit: "Poll the audience"
   pages:
     not_found:
       title: "Dude, where's your filing cabinet?"
+  activerecord:
+    models:
+      inquest: Inquest
+    attributes:
+      inquest:
+        image_url: Image location
