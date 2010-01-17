@@ -1,4 +1,7 @@
 # Edit this Gemfile to bundle your application's dependencies.
+directory "vendor/rails", :glob => "{*/,}*.gemspec"
+git "git://github.com/rails/arel.git"
+git "git://github.com/rails/rack.git"
 
 gem "rails", "3.0.pre"
 
