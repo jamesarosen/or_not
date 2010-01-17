@@ -7,6 +7,8 @@ en:
       is: 'A filing cabinet'
       is_not: 'Not a filing cabinet'
       help: "I don't get it. What's going on here?"
+      previous: '&laquo; Previous'
+      next: 'Next &raquo;'
   pages:
     not_found:
       title: "Dude, where's your filing cabinet?"
