@@ -1,5 +1,9 @@
 en:
-  x_or_not:
-    x: 'Filing Cabinet'
-    or_not: 'or not?'
+  site:
     title: 'Filing Cabinet or not?'
+  inquests:
+    show:
+      title: 'Is this a filing cabinet or not? Vote now!'
+      is: 'A filing cabinet'
+      is_not: 'Not a filing cabinet'
+      help: "I don't get it. What's going on here?"

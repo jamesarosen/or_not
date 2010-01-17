@@ -1,2 +1,8 @@
-<h1><%= t 'x_or_not.title' %></h1>
+<h1><%= t 'site.title' %></h1>
+<h2><%= t 'inquests.show.title' %></h2>
 <%= image_tag @inquest.image_url -%>
+<form action='/' method='get'>
+  <%= submit_tag t('inquests.show.is'),      :name => 'is' %>
+  <%= submit_tag t('inquests.show.is_not'),  :name => 'is_not' %>
+</form>
+<%= link_to t('inquests.show.help'), about_path %>
