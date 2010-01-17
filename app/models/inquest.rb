@@ -20,11 +20,11 @@ class Inquest < ActiveRecord::Base
   validate :validate_image_url_is_fully_qualified_url
   
   def predecessor
-    self.class.predecessor_of(self)
+    @predecessor ||= self.class.predecessor_of(self)
   end
   
   def successor
-    self.class.successor_of(self)
+    @successor ||= self.class.successor_of(self)
   end
   
   protected
