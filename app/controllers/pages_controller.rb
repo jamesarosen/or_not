@@ -2,6 +2,7 @@ class PagesController < ApplicationController
   
   def home
     @inquest = Inquest.last
+    render :action => '/inquests/show'
   end
 
   def about
