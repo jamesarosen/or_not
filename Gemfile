@@ -19,4 +19,5 @@ gem "rails", "3.0.pre"
 
 only :test do
   gem 'redgreen', '~> 1.2.2'
+  gem 'timecop', '~> 0.3.4'
 end

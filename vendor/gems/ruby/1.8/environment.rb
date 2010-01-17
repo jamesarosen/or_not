@@ -14,14 +14,14 @@ module Bundler
   $LOAD_PATH.unshift File.expand_path("#{dir}/gems/redgreen-1.2.2/lib")
   $LOAD_PATH.unshift File.expand_path("#{dir}/dirs/arel/bin")
   $LOAD_PATH.unshift File.expand_path("#{dir}/dirs/arel/lib")
-  $LOAD_PATH.unshift File.expand_path("#{dir}/../../../rails/activemodel/bin")
-  $LOAD_PATH.unshift File.expand_path("#{dir}/../../../rails/activemodel/lib")
   $LOAD_PATH.unshift File.expand_path("#{dir}/dirs/rack/bin")
   $LOAD_PATH.unshift File.expand_path("#{dir}/dirs/rack/lib")
   $LOAD_PATH.unshift File.expand_path("#{dir}/gems/rack-test-0.5.3/bin")
   $LOAD_PATH.unshift File.expand_path("#{dir}/gems/rack-test-0.5.3/lib")
   $LOAD_PATH.unshift File.expand_path("#{dir}/gems/rack-mount-0.4.5/bin")
   $LOAD_PATH.unshift File.expand_path("#{dir}/gems/rack-mount-0.4.5/lib")
+  $LOAD_PATH.unshift File.expand_path("#{dir}/../../../rails/activemodel/bin")
+  $LOAD_PATH.unshift File.expand_path("#{dir}/../../../rails/activemodel/lib")
   $LOAD_PATH.unshift File.expand_path("#{dir}/gems/abstract-1.0.0/bin")
   $LOAD_PATH.unshift File.expand_path("#{dir}/gems/abstract-1.0.0/lib")
   $LOAD_PATH.unshift File.expand_path("#{dir}/gems/erubis-2.6.5/bin")
@@ -34,6 +34,8 @@ module Bundler
   $LOAD_PATH.unshift File.expand_path("#{dir}/gems/mail-1.6.0/lib")
   $LOAD_PATH.unshift File.expand_path("#{dir}/../../../rails/actionmailer/bin")
   $LOAD_PATH.unshift File.expand_path("#{dir}/../../../rails/actionmailer/lib")
+  $LOAD_PATH.unshift File.expand_path("#{dir}/gems/timecop-0.3.4/bin")
+  $LOAD_PATH.unshift File.expand_path("#{dir}/gems/timecop-0.3.4/lib")
   $LOAD_PATH.unshift File.expand_path("#{dir}/gems/rake-0.8.7/bin")
   $LOAD_PATH.unshift File.expand_path("#{dir}/gems/rake-0.8.7/lib")
   $LOAD_PATH.unshift File.expand_path("#{dir}/../../../rails/railties/bin")
@@ -58,14 +60,14 @@ module Bundler
   @bundled_specs["redgreen"].loaded_from = "#{dir}/specifications/redgreen-1.2.2.gemspec"
   @bundled_specs["arel"] = eval(File.read("#{dir}/specifications/arel-0.2.pre.gemspec"))
   @bundled_specs["arel"].loaded_from = "#{dir}/specifications/arel-0.2.pre.gemspec"
-  @bundled_specs["activemodel"] = eval(File.read("#{dir}/specifications/activemodel-3.0.pre.gemspec"))
-  @bundled_specs["activemodel"].loaded_from = "#{dir}/specifications/activemodel-3.0.pre.gemspec"
   @bundled_specs["rack"] = eval(File.read("#{dir}/specifications/rack-1.1.0.gemspec"))
   @bundled_specs["rack"].loaded_from = "#{dir}/specifications/rack-1.1.0.gemspec"
   @bundled_specs["rack-test"] = eval(File.read("#{dir}/specifications/rack-test-0.5.3.gemspec"))
   @bundled_specs["rack-test"].loaded_from = "#{dir}/specifications/rack-test-0.5.3.gemspec"
   @bundled_specs["rack-mount"] = eval(File.read("#{dir}/specifications/rack-mount-0.4.5.gemspec"))
   @bundled_specs["rack-mount"].loaded_from = "#{dir}/specifications/rack-mount-0.4.5.gemspec"
+  @bundled_specs["activemodel"] = eval(File.read("#{dir}/specifications/activemodel-3.0.pre.gemspec"))
+  @bundled_specs["activemodel"].loaded_from = "#{dir}/specifications/activemodel-3.0.pre.gemspec"
   @bundled_specs["abstract"] = eval(File.read("#{dir}/specifications/abstract-1.0.0.gemspec"))
   @bundled_specs["abstract"].loaded_from = "#{dir}/specifications/abstract-1.0.0.gemspec"
   @bundled_specs["erubis"] = eval(File.read("#{dir}/specifications/erubis-2.6.5.gemspec"))
@@ -78,6 +80,8 @@ module Bundler
   @bundled_specs["mail"].loaded_from = "#{dir}/specifications/mail-1.6.0.gemspec"
   @bundled_specs["actionmailer"] = eval(File.read("#{dir}/specifications/actionmailer-3.0.pre.gemspec"))
   @bundled_specs["actionmailer"].loaded_from = "#{dir}/specifications/actionmailer-3.0.pre.gemspec"
+  @bundled_specs["timecop"] = eval(File.read("#{dir}/specifications/timecop-0.3.4.gemspec"))
+  @bundled_specs["timecop"].loaded_from = "#{dir}/specifications/timecop-0.3.4.gemspec"
   @bundled_specs["rake"] = eval(File.read("#{dir}/specifications/rake-0.8.7.gemspec"))
   @bundled_specs["rake"].loaded_from = "#{dir}/specifications/rake-0.8.7.gemspec"
   @bundled_specs["railties"] = eval(File.read("#{dir}/specifications/railties-3.0.pre.gemspec"))
