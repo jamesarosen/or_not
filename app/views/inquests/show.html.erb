@@ -1,4 +1,3 @@
-<h1><%= t 'site.title' %></h1>
 <h2><%= t 'inquests.show.title' %></h2>
 <%= image_tag @inquest.image_url -%>
 <%= button_to t('inquests.show.is'), rulings_path(:ruling => {:inquest_id => @inquest, :vote => Ruling::YES}) %>
