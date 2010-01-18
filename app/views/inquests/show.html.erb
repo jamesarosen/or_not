@@ -1,8 +1,12 @@
 <h2><%= t 'inquests.show.title' %></h2>
-<%= image_tag @inquest.image_url -%>
-<%= button_to t('inquests.show.is'), rulings_path(:ruling => {:inquest_id => @inquest, :vote => Ruling::YES}) %>
-<%= button_to t('inquests.show.is_not'), rulings_path(:ruling => {:inquest_id => @inquest, :vote => Ruling::NO}) %>
-<%= button_to t('inquests.show.not_sure'), rulings_path(:ruling => {:inquest_id => @inquest, :vote => Ruling::NOT_SURE}) %>
+<div class='inquest'>
+  <%= image_tag @inquest.image_url, :class => 'xOrNot' %>
+  <div class='vote'>
+    <%= button_to t('inquests.show.is'), rulings_path(:ruling => {:inquest_id => @inquest, :vote => Ruling::YES}) %>
+    <%= button_to t('inquests.show.is_not'), rulings_path(:ruling => {:inquest_id => @inquest, :vote => Ruling::NO}) %>
+    <%= button_to t('inquests.show.not_sure'), rulings_path(:ruling => {:inquest_id => @inquest, :vote => Ruling::NOT_SURE}) %>
+  </div>
+</div>
 <%- if @inquest.predecessor.present? -%>
   <%= link_to t('inquests.show.previous'), @inquest.predecessor %>
 <%- end -%>

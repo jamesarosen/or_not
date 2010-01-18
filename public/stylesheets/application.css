@@ -1,0 +1,42 @@
+html, body {
+  background: #ddd;
+  margin:0;
+  padding:0; 
+}
+
+#wrapper {
+  margin: 0 auto;
+  padding: 0 25%;
+}
+
+#header, #footer {
+  padding-bottom: 1.5em;
+  padding-top: 1.5em;
+}
+
+#content {
+  clear: both;
+  padding-bottom: 1.5em;
+  padding-top: 1.5em;
+}
+
+#footer {
+  clear: both;
+  font-size: 1.5em;
+}
+
+h1 { font-size: 2em; }
+
+div.inquest {
+  padding: 1em;
+  text-align: center;
+}
+
+img.xOrNot {
+  max-height: 15em;
+  max-width: 15em;
+}
+
+div.vote form.button-to, div.vote form.button-to div {
+  display: inline;
+}
