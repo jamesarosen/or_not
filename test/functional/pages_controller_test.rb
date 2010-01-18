@@ -5,6 +5,14 @@ class PagesControllerTest < ActionController::TestCase
   setup do
     Inquest.create!(:image_url => 'http://myimageserver.com/images/1.png')
   end
+  
+  test 'showing the home page when no Inquests have been created should be OK' do
+    Inquest.delete_all
+    get :home
+    assert_response :success
+    assert_select "a[href='#{new_inquest_path}']"
+    assert_template '/inquests/none'
+  end
 
   test 'should route / to pages/home' do
     assert_routing '/', :controller => 'pages', :action => 'home'

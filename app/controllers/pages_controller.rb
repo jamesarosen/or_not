@@ -2,7 +2,11 @@ class PagesController < ApplicationController
   
   def home
     @inquest = Inquest.last
-    render :action => '/inquests/show'
+    if @inquest.present?
+      render :action => '/inquests/show'
+    else
+      render :action => '/inquests/none'
+    end
   end
 
   def about
