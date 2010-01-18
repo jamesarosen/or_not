@@ -15,4 +15,12 @@ class ApplicationController < ActionController::Base
     render :action => '/pages/not_found', :status => :not_found
   end
   
+  def inquest_ids_ruled_on_by_current_user
+    session[:ruled_on_inquest_ids] ||= []
+  end
+  
+  def current_user_has_ruled_on_inquest(inquest)
+    inquest_ids_ruled_on_by_current_user << inquest.id
+  end
+  
 end

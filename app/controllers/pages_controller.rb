@@ -1,7 +1,7 @@
 class PagesController < ApplicationController
   
   def home
-    @inquest = Inquest.last
+    @inquest = Inquest.random_not_including(inquest_ids_ruled_on_by_current_user)
     if @inquest.present?
       render :action => '/inquests/show'
     else
