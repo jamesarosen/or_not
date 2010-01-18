@@ -16,6 +16,15 @@ class Inquest < ActiveRecord::Base
                  :limit => 1)
   end
   
+  def self.random_not_including(ids)
+    if (c = self.count) == 0
+      nil
+    else
+      # thanks, http://github.com/hgimenez/fast_random
+      find(:first, :offset => rand(c), :conditions => ['id not in (?)', ids])
+    end
+  end
+  
   validates_presence_of :image_url
   validate :validate_image_url_is_fully_qualified_url
   
