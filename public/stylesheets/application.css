@@ -37,6 +37,8 @@ img.xOrNot {
   max-width: 15em;
 }
 
+div.vote { margin-top: 1em; }
+
 div.vote form.button-to, div.vote form.button-to div {
   display: inline;
 }

@@ -12,6 +12,29 @@ class InquestsControllerTest < ActionController::TestCase
     end
   end
   
+  test 'showing the home page when no Inquests have been created should be OK' do
+    Inquest.delete_all
+    get :random
+    assert_response :success
+    assert_select "a[href='#{new_inquest_path}']"
+    assert_template '/inquests/none'
+  end
+  
+  test 'showing the home page when the user has ruled on all inquests should be OK' do
+    Inquest.all.each do |i|
+      @controller.public_current_user_has_ruled_on_inquest(i)
+    end
+    get :random
+    assert_response :success
+    assert_select "a[href='#{new_inquest_path}']"
+    assert_template '/inquests/none'
+  end
+
+  test 'should route / to inquests/random' do
+    assert_routing '/', :controller => 'inquests', :action => 'random'
+    assert_recognizes({:controller => 'inquests', :action => 'random'}, '/index.html')
+  end
+  
   test "showing an inquest that does not exist should return a not-found" do
     assert Inquest.find_by_id(68381).blank?
     get :show, :id => 68381

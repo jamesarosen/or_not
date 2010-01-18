@@ -4,6 +4,15 @@ class InquestsController < ApplicationController
     @inquest = Inquest.find(params[:id])
   end
   
+  def random
+    @inquest = Inquest.random_not_including(inquest_ids_ruled_on_by_current_user)
+    if @inquest.present?
+      render :action => 'show'
+    else
+      render :action => 'none'
+    end
+  end
+  
   def new
     @inquest ||= new_inquest_from_params
   end
