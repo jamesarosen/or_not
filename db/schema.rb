@@ -9,12 +9,22 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100117183217) do
+ActiveRecord::Schema.define(:version => 20100117235643) do
 
   create_table "inquests", :force => true do |t|
     t.string   "image_url",  :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "rulings", :force => true do |t|
+    t.integer  "inquest_id",               :null => false
+    t.string   "vote",       :limit => 16, :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "rulings", ["inquest_id", "vote"], :name => "index_rulings_on_inquest_id_and_vote"
+  add_index "rulings", ["inquest_id"], :name => "index_rulings_on_inquest_id"
 
 end
