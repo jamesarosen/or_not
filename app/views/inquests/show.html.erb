@@ -1,6 +1,6 @@
 <h2><%= t 'inquests.show.title' %></h2>
 <div class='inquest'>
-  <%= image_tag @inquest.image_url, :class => 'xOrNot' %>
+  <%= inquest_image_tag(@inquest) %>
   <div class='vote'>
     <%= button_to t('inquests.show.is'), inquest_rulings_path(@inquest, :ruling => {:vote => Ruling::YES}) %>
     <%= button_to t('inquests.show.is_not'), inquest_rulings_path(@inquest, :ruling => {:vote => Ruling::NO}) %>
