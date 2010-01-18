@@ -4,8 +4,8 @@ PantsOrNot::Application.routes.draw do |map|
   match '/about(.html)' => 'pages#about', :as => :about
   resources :inquests, :only => [ :show, :new, :create ] do
     get :random, :on => :collection
+    resources :rulings, :only => [ :create ]
   end
-  resources :rulings, :only => [ :create ]
   match '/(:path(.:format))' => 'pages#not_found'
   # The priority is based upon order of creation:
   # first created -> highest priority.

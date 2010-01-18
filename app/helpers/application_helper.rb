@@ -17,15 +17,15 @@ module ApplicationHelper
   # TODO: remove once
   # https://rails.lighthouseapp.com/projects/8994/tickets/3730
   # is resolved.
-  def rulings_path(options = {})
-    rulings_url(options.merge({:only_path => true}))
+  def inquest_rulings_path(inquest, options = {})
+    inquest_rulings_url(inquest, options.merge({:only_path => true}))
   end
   
   # TODO: remove once
   # https://rails.lighthouseapp.com/projects/8994/tickets/3730
   # is resolved.
-  def rulings_url(options)
-    url_for({:controller => :rulings, :action => :create}.merge(options))
+  def inquest_rulings_url(inquest, options)
+    url_for({:controller => :rulings, :action => :create, :inquest_id => inquest}.merge(options))
   end
   
 end

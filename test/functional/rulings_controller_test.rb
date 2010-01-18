@@ -15,12 +15,12 @@ class RulingsControllerTest < ActionController::TestCase
   end
   
   test "after successfully ruling on an Inquest, the user should be redirected to another random Inquest" do
-    post :create, :ruling => { :inquest_id => @inquest1.id, :vote => 'yes' }
+    post :create, :inquest_id => @inquest1.id, :ruling => { :vote => 'yes' }
     assert_redirected_to random_inquest_path
   end
   
   test "after successfully ruling on an Inquest, should mark the current user as having ruled on it" do
-    post :create, :ruling => { :inquest_id => @inquest2.id, :vote => 'no' }
+    post :create, :inquest_id => @inquest2.id, :ruling => { :vote => 'no' }
     assert @controller.current_user_has_ruled_on_inquest?(@inquest2)
   end
   
