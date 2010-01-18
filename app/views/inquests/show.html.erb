@@ -1,10 +1,9 @@
 <h1><%= t 'site.title' %></h1>
 <h2><%= t 'inquests.show.title' %></h2>
 <%= image_tag @inquest.image_url -%>
-<form action='/' method='get'>
-  <%= submit_tag t('inquests.show.is'),      :name => 'is' %>
-  <%= submit_tag t('inquests.show.is_not'),  :name => 'is_not' %>
-</form>
+<%= button_to t('inquests.show.is'), rulings_path(:ruling => {:inquest_id => @inquest, :vote => Ruling::YES}) %>
+<%= button_to t('inquests.show.is_not'), rulings_path(:ruling => {:inquest_id => @inquest, :vote => Ruling::NO}) %>
+<%= button_to t('inquests.show.not_sure'), rulings_path(:ruling => {:inquest_id => @inquest, :vote => Ruling::NOT_SURE}) %>
 <%= link_to t('inquests.show.help'), about_path %>
 <%- if @inquest.predecessor.present? -%>
   <%= link_to t('inquests.show.previous'), @inquest.predecessor %>

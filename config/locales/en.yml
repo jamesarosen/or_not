@@ -6,6 +6,7 @@ en:
       title: 'Is this a filing cabinet or not? Vote now!'
       is: 'A filing cabinet'
       is_not: 'Not a filing cabinet'
+      not_sure: "I'm not sure"
       help: "I don't get it. What's going on here?"
       previous: '&laquo; Previous'
       next: 'Next &raquo;'
