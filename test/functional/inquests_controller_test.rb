@@ -3,6 +3,7 @@ require 'test_helper'
 class InquestsControllerTest < ActionController::TestCase
 
   setup do
+    Inquest.delete_all
     Timecop.travel(6.days.ago) do
       @old_inquest = Inquest.create!(:image_url => 'http://foo.com/cabinet.jpg')
     end
@@ -25,22 +26,22 @@ class InquestsControllerTest < ActionController::TestCase
   
   test "showing the oldest inquest should not show a 'previous' link" do
     get :show, :id => @old_inquest.id
-    assert_select 'a', :text => /prev|old/i, :count => 0
+    assert_select 'a', :text => /pred|prev|older/i, :count => 0
   end
   
   test "showing an inquest that is newer than another inquest should show an 'previous' link" do
     get :show, :id => @new_inquest.id
-    assert_select "a[href='#{inquest_path(@old_inquest)}']", :text => /prev|old/i, :count => 1
+    assert_select "a[href='#{inquest_path(@old_inquest)}']", :text => /pred|prev|older/i, :count => 1
   end
   
   test "showing an inquest that is older than another inquest should show a 'newer' link" do
     get :show, :id => @old_inquest.id
-    assert_select "a[href='#{inquest_path(@new_inquest)}']", :text => /next|new/i, :count => 1
+    assert_select "a[href='#{inquest_path(@new_inquest)}']", :text => /succ|next|newer/i, :count => 1
   end
   
   test "showing the newest inquest should not show a 'newer' link" do
     get :show, :id => @new_inquest.id
-    assert_select 'a', :text => /next|new/i, :count => 0
+    assert_select 'a', :text => /succ|next|newer/i, :count => 0
   end
   
   test "showing the form to add an Inquest should be successful" do
