@@ -17,6 +17,9 @@ en:
     new:
       title: "Not sure whether it's a filing cabinet or not?"
       submit: "Poll the audience"
+    none:
+      body: "Sorry, there aren't any inquests you haven't voted on. Maybe you'd like to {{link}}?"
+      link: "add one"
   pages:
     not_found:
       title: "Dude, where's your filing cabinet?"

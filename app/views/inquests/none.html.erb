@@ -1,2 +1,3 @@
-Sorry, there aren't any inquests you haven't voted on. Maybe you'd like to
-<%= link_to 'add one', new_inquest_path -%>?
+<p>
+  <%= t('inquests.none.body', :link => link_to(t('inquests.none.link'), new_inquest_path)) %>
+</p>
