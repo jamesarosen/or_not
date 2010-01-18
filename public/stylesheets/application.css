@@ -42,3 +42,6 @@ div.vote { margin-top: 1em; }
 div.vote form.button-to, div.vote form.button-to div {
   display: inline;
 }
+
+.flash.notice { color: green; }
+.flash.errro  { color: red; }

@@ -9,6 +9,9 @@
         <h1><%= t 'site.title' %></h1>
       </div>
       <div id='content'>
+        <% flash.each do |k,v| %>
+          <p class='flash <%= k -%>'><%= v %></p>
+        <% end %>
         <%= yield %>
       </div>
       <div id='footer'>

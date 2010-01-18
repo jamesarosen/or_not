@@ -20,6 +20,10 @@ en:
     none:
       body: "Sorry, there aren't any inquests you haven't voted on. Maybe you'd like to {{link}}?"
       link: add one
+  rulings:
+    create:
+      success: Thanks for voting
+      error: Something went wrong with that vote.
   pages:
     not_found:
       title: "Dude, where's your filing cabinet?"
