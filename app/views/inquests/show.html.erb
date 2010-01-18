@@ -3,7 +3,6 @@
 <%= button_to t('inquests.show.is'), rulings_path(:ruling => {:inquest_id => @inquest, :vote => Ruling::YES}) %>
 <%= button_to t('inquests.show.is_not'), rulings_path(:ruling => {:inquest_id => @inquest, :vote => Ruling::NO}) %>
 <%= button_to t('inquests.show.not_sure'), rulings_path(:ruling => {:inquest_id => @inquest, :vote => Ruling::NOT_SURE}) %>
-<%= link_to t('inquests.show.help'), about_path %>
 <%- if @inquest.predecessor.present? -%>
   <%= link_to t('inquests.show.previous'), @inquest.predecessor %>
 <%- end -%>
