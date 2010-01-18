@@ -1,6 +1,9 @@
 en:
   site:
     title: 'Filing Cabinet or not?'
+    issues_link:
+      text: Got Beef?
+      url: http://github.com/jamesarosen/or_not/issues
   inquests:
     show:
       title: 'Is this a filing cabinet or not? Vote now!'
