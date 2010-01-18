@@ -17,11 +17,22 @@ class Inquest < ActiveRecord::Base
   end
   
   def self.random_not_including(ids)
-    if (c = self.count) == 0
+    if (c = self.count - ids.size) <= 0
       nil
     else
-      # thanks, http://github.com/hgimenez/fast_random
-      find(:first, :offset => rand(c), :conditions => ['id not in (?)', ids])
+      # Without the sub-query, the offset could be for one
+      # of the rows omitted by the where clause. Using the
+      # sub-query means that all rows that the offset sees
+      # are valid.
+      # 
+      # The alternative would be to use :order => rand,
+      # but that gets very slow for large tables.
+      # (hat tip: http://github.com/hgimenez/fast_random)
+      find(:first, :select => 'remaining_inquests.*',
+                   :from => "(select * from `#{self.table_name}` where " +
+                              sanitize_sql_array(['id not in (?)', ids]) +
+                            ") as remaining_inquests",
+                   :offset => rand(c))
     end
   end
   
