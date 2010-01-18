@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   
+  layout 'application'
   protect_from_forgery
   filter_parameter_logging :password
   rescue_from ActiveRecord::RecordNotFound, :with => :not_found
