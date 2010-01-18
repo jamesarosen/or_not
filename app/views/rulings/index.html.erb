@@ -1,0 +1,20 @@
+<h2><%= t 'rulings.index.title' %></h2>
+<div class='inquest'>
+  <%= inquest_image_tag(@inquest) %>
+  <table>
+    <thead>
+      <tr>
+        <th><%= t 'inquests.show.is' -%></th>
+        <th><%= t 'inquests.show.is_not' -%></th>
+        <th><%= t 'inquests.show.not_sure' -%></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><%= @inquest.yes_count -%></td>
+        <td><%= @inquest.no_count -%></td>
+        <td><%= @inquest.not_sure_count -%></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

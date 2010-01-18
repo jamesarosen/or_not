@@ -1,5 +1,11 @@
 class RulingsController < ApplicationController
   
+  helper :all
+  
+  def index
+    @inquest = Inquest.find(params[:inquest_id])
+  end
+  
   def create
     @inquest = Inquest.find(params[:inquest_id])
     @ruling ||= Ruling.new(params[:ruling].merge(:inquest => @inquest))

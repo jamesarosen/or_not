@@ -27,6 +27,11 @@ html, body {
 
 h1 { font-size: 2em; }
 
+td, th {
+  padding: .5em 1em;
+  text-align: center;
+}
+
 div.inquest {
   padding: 1em;
   text-align: center;

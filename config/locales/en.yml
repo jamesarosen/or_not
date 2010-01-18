@@ -24,6 +24,8 @@ en:
     create:
       success: Thanks for voting
       error: Something went wrong with that vote.
+    index:
+      title: The people have spoken.
   pages:
     not_found:
       title: "Dude, where's your filing cabinet?"
