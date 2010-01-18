@@ -40,7 +40,7 @@ class Inquest < ActiveRecord::Base
   
   def validate_image_url_is_fully_qualified_url
     as_uri = URI.parse(self.image_url) rescue nil
-    errors.add(:image_url, 'is not a proper URL') unless as_uri.kind_of?(URI::HTTP)
+    errors.add(:image_url, I18n.translate('errors.messages.improper_url')) unless as_uri.kind_of?(URI::HTTP)
   end
   
 end

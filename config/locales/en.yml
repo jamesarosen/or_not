@@ -1,25 +1,25 @@
 en:
   site:
-    title: 'Filing Cabinet or not?'
+    title: Filing Cabinet or not?
     issues_link:
       text: Got Beef?
       url: http://github.com/jamesarosen/or_not/issues
   inquests:
     show:
-      title: 'Is this a filing cabinet or not? Vote now!'
-      is: 'A filing cabinet'
-      is_not: 'Not a filing cabinet'
+      title: Is this a filing cabinet or not? Vote now!
+      is: A filing cabinet
+      is_not: Not a filing cabinet
       not_sure: "I'm not sure"
       help: "I don't get it. What's going on here?"
       previous: '&laquo; Previous'
       next: 'Next &raquo;'
-      new: "New inquiry"
+      new: New inquiry
     new:
       title: "Not sure whether it's a filing cabinet or not?"
-      submit: "Poll the audience"
+      submit: Poll the audience
     none:
       body: "Sorry, there aren't any inquests you haven't voted on. Maybe you'd like to {{link}}?"
-      link: "add one"
+      link: add one
   pages:
     not_found:
       title: "Dude, where's your filing cabinet?"
@@ -29,3 +29,6 @@ en:
     attributes:
       inquest:
         image_url: Image location
+  errors:
+    messages:
+      improper_url: is not a proper URL
