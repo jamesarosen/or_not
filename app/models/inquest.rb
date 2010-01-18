@@ -36,6 +36,8 @@ class Inquest < ActiveRecord::Base
     end
   end
   
+  has_many :rulings, :dependent => :destroy
+  
   validates_presence_of :image_url
   validate :validate_image_url_is_fully_qualified_url
   
@@ -45,6 +47,18 @@ class Inquest < ActiveRecord::Base
   
   def successor
     @successor ||= self.class.successor_of(self)
+  end
+  
+  def yes_count
+    rulings.yes.count
+  end
+  
+  def no_count
+    rulings.no.count
+  end
+  
+  def not_sure_count
+    rulings.not_sure.count
   end
   
   protected

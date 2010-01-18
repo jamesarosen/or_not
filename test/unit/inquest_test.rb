@@ -51,4 +51,13 @@ class InquestTest < ActiveSupport::TestCase
     assert_nil @new_inquest.successor
   end
   
+  test 'an Inquest with Rulings should know its counts for each type of Ruling' do
+    4.times { Ruling.create!(:inquest => @new_inquest, :vote => Ruling::YES) }
+    3.times { Ruling.create!(:inquest => @new_inquest, :vote => Ruling::NO) }
+    2.times { Ruling.create!(:inquest => @new_inquest, :vote => Ruling::NOT_SURE) }
+    assert_equal 4, @new_inquest.yes_count
+    assert_equal 3, @new_inquest.no_count
+    assert_equal 2, @new_inquest.not_sure_count
+  end
+  
 end
