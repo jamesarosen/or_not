@@ -16,6 +16,10 @@ class InquestTest < ActiveSupport::TestCase
     assert_equal @new_inquest, Inquest.random_not_including([@old_inquest.id])
   end
   
+  test 'finding a random Inquest not in a given list of IDs should return a _random_ Inquest if one exists' do
+    flunk("I'll need to write some statistics-based testing for this one.")
+  end
+  
   test 'finding a random Inquest not in a given list of IDs should return nil if none exists' do
     assert_nil Inquest.random_not_including([@old_inquest.id, @new_inquest.id])
   end
