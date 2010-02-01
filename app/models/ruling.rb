@@ -1,9 +1,9 @@
 class Ruling < ActiveRecord::Base
   
-  YES      = 'yes'
-  NO       = 'no'
-  NOT_SURE = 'not_sure'
-  VOTES = [ YES, NO, NOT_SURE ]
+  YES      = 'yes'.freeze
+  NO       = 'no'.freeze
+  NOT_SURE = 'not_sure'.freeze
+  VOTES = [ YES, NO, NOT_SURE ].freeze
   
   VOTES.each do |vote|
     named_scope vote.to_sym, :conditions => { :vote => vote }
