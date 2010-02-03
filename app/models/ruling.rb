@@ -6,7 +6,7 @@ class Ruling < ActiveRecord::Base
   VOTES = [ YES, NO, NOT_SURE ].freeze
   
   VOTES.each do |vote|
-    named_scope vote.to_sym, :conditions => { :vote => vote }
+    scope vote.to_sym, :conditions => { :vote => vote }
   end
   
   belongs_to :inquest

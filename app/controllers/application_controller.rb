@@ -2,7 +2,6 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
 
   layout 'application'
-  filter_parameter_logging :password
   rescue_from ActiveRecord::RecordNotFound, :with => :not_found
   rescue_from ActionController::RoutingError, :with => :not_found
   rescue_from ActionController::UnknownAction, :with => :not_found
