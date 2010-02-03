@@ -61,6 +61,16 @@ class Inquest < ActiveRecord::Base
     rulings.not_sure.count
   end
   
+  def ruling_histogram_data
+    groups = rulings.count(:group => :vote)
+    # help! Better conversion of paired array to hash
+    res = {}
+    groups.each do |k, v|
+      res[k] = v
+    end
+    res
+  end
+  
   protected
   
   def validate_image_url_is_fully_qualified_url

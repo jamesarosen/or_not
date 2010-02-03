@@ -62,6 +62,7 @@ class InquestTest < ActiveSupport::TestCase
     assert_equal 4, @new_inquest.yes_count
     assert_equal 3, @new_inquest.no_count
     assert_equal 2, @new_inquest.not_sure_count
+    assert_equal ({Ruling::YES => 4, Ruling::NO => 3, Ruling::NOT_SURE => 2}), @new_inquest.ruling_histogram_data
   end
   
 end

@@ -16,6 +16,7 @@ html, body {
 
 #content {
   clear: both;
+  overflow: auto;
   padding-bottom: 1.5em;
   padding-top: 1.5em;
 }
@@ -37,9 +38,26 @@ div.inquest {
   text-align: center;
 }
 
+#inquest_container {
+  float: left;	
+}
+#last_ruled_on_inquest {
+	float: left
+	margin-left: 40px;
+}
 img.xOrNot {
   max-height: 15em;
   max-width: 15em;
+}
+
+img.xOrNotSmall {
+  max-height: 8em;
+  max-width: 8em;
+}
+
+#inquiry_container {
+	overflow: auto;
+	clear: both;
 }
 
 div.vote { margin-top: 1em; }

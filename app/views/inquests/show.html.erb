@@ -1,4 +1,6 @@
+<div id='inquest_container'>
 <h2><%= t 'inquests.show.title' %></h2>
+
 <div class='inquest'>
   <%= inquest_image_tag(@inquest) %>
   <div class='vote'>
@@ -7,6 +9,7 @@
     <%= button_to t('inquests.show.not_sure'), inquest_rulings_path(@inquest, :ruling => {:vote => Ruling::NOT_SURE}) %>
   </div>
 </div>
+<div class='inquest_controls'>
 <%- if @inquest.predecessor.present? -%>
   <%= link_to t('inquests.show.previous'), @inquest.predecessor %>
 <%- end -%>
@@ -14,3 +17,16 @@
   <%= link_to t('inquests.show.next'), @inquest.successor %>
 <%- end -%>
 <%= link_to t('inquests.show.new'), new_inquest_path %>
+</div>
+</div><!--end of inquest_container -->
+
+<div id='last_ruled_on_inquest'>
+<% if @last_ruled_on_inquest%>	
+  <%= inquest_image_tag_small(@last_ruled_on_inquest) %>
+  <br/>
+  <% hd = @last_ruled_on_inquest.ruling_histogram_data %>
+  Yes: <%= hd[Ruling::YES] || 0 %><br/>
+  No: <%= hd[Ruling::NO] || 0 %><br/>
+  Not Sure: <%= hd[Ruling::NOT_SURE] || 0 %><br/>
+<% end %>
+</div>

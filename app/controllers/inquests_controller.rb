@@ -6,6 +6,7 @@ class InquestsController < ApplicationController
   
   def random
     @inquest = Inquest.random_not_including(inquest_ids_ruled_on_by_current_user)
+    @last_ruled_on_inquest = Inquest.find_by_id(inquest_ids_ruled_on_by_current_user.last)
     if @inquest.present?
       render :action => 'show'
     else
