@@ -6,7 +6,9 @@
   <body>
     <div id='wrapper'>
       <div id='header'>
-        <h1><%= t 'site.title' %></h1>
+        <%= image_tag 'blue_jeans.jpg', :alt => 'Pants', :title => 'Pants' %>
+        or
+        <%= image_tag 'blue_skirt.jpg', :alt => 'Not', :title => 'Not' %>?
       </div>
       <div id='content'>
         <% flash.each do |k,v| %>
