@@ -1,4 +1,5 @@
 PantsOrNot::Application.routes.draw do |map|
+  #root "inquests#random"
   match '/(index(.htm(l)))' => 'inquests#random', :as => :random_inquest
   match '/' => 'inquests#random'
   match '/about(.html)' => 'pages#about', :as => :about

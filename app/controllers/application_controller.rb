@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
-  
-  layout 'application'
   protect_from_forgery
+
+  layout 'application'
   filter_parameter_logging :password
   rescue_from ActiveRecord::RecordNotFound, :with => :not_found
   rescue_from ActionController::RoutingError, :with => :not_found
@@ -22,5 +22,4 @@ class ApplicationController < ActionController::Base
   def current_user_has_ruled_on_inquest(inquest)
     inquest_ids_ruled_on_by_current_user << inquest.id
   end
-  
 end

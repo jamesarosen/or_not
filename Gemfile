@@ -1,23 +1,10 @@
 # Edit this Gemfile to bundle your application's dependencies.
-directory "vendor/rails", :glob => "{*/,}*.gemspec"
 git "git://github.com/rails/arel.git"
 git "git://github.com/rails/rack.git"
+source :gemcutter
 
-gem "rails", "3.0.pre"
+gem "rails", :git => "git://github.com/rails/rails.git"
+gem "sqlite3-ruby"
 
-## Bundle edge rails:
-# gem "rails", :git => "git://github.com/rails/rails.git"
-
-## Bundle the gems you use:
-# gem "bj"
-# gem "hpricot", "0.6"
-# gem "sqlite3-ruby", :require_as => "sqlite3"
-# gem "aws-s3", :require_as => "aws/s3"
-
-## Bundle gems used only in certain environments:
-# gem "rspec", :only => :test
-
-only :test do
-  gem 'redgreen', '~> 1.2.2'
-  gem 'timecop', '~> 0.3.4'
-end
+gem 'redgreen', '~> 1.2.2', :only => :test
+gem 'timecop', '~> 0.3.4', :only => :test
