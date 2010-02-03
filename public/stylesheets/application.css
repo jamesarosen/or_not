@@ -42,9 +42,13 @@ div.inquest {
   float: left;	
 }
 #last_ruled_on_inquest {
-	float: left
+	float: left;
 	margin-left: 40px;
 }
+  #last_ruled_on_inquest span {
+    display: block;
+  }
+  
 img.xOrNot {
   max-height: 15em;
   max-width: 15em;
