@@ -11,7 +11,6 @@ class RulingsController < ApplicationController
     @ruling ||= Ruling.new(params[:ruling].merge(:inquest => @inquest))
     if @ruling.save
       flash[:notice] = I18n.t('rulings.create.success')
-      flash[:previous_inquest_id] = @inquest.id
       redirect_to random_inquest_path
       current_user_has_ruled_on_inquest(@inquest)
     else
