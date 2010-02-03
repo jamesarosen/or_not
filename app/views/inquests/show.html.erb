@@ -20,13 +20,4 @@
 </div>
 </div><!--end of inquest_container -->
 
-<div id='last_ruled_on_inquest'>
-<% if @last_ruled_on_inquest%>	
-  <%= inquest_image_tag_small(@last_ruled_on_inquest) %>
-  <br/>
-  <% hd = @last_ruled_on_inquest.ruling_histogram_data %>
-  Yes: <%= hd[Ruling::YES] || 0 %><br/>
-  No: <%= hd[Ruling::NO] || 0 %><br/>
-  Not Sure: <%= hd[Ruling::NOT_SURE] || 0 %><br/>
-<% end %>
-</div>
+<%= render :partial => '/inquests/last_ruled_on', :locals => { :inquest => @last_ruled_on_inquest } %>

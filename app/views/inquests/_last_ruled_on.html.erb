@@ -1,0 +1,8 @@
+<% if inquest.present? %>	
+  <div id='last_ruled_on_inquest'>
+    <%= inquest_image_tag_small(inquest) %>
+    <span class='metric'><%= t('inquests.show.is') -%>: <%= inquest.yes_count %></span>
+    <span class='metric'><%= t('inquests.show.is_not') -%>: <%= inquest.no_count %></span>
+    <span class='metric'><%= t('inquests.show.not_sure') -%>: <%= inquest.not_sure_count %></span>
+  </div>
+<% end %>
