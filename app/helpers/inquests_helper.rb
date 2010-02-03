@@ -5,7 +5,7 @@ module InquestsHelper
   end
 
   def inquest_image_tag_small(inquest)
-    image_tag inquest.image_url, :class => 'xOrNotSmall'
+    image_tag inquest.image_url, :class => 'xOrNot small'
   end
   
 end

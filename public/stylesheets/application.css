@@ -1,11 +1,12 @@
 html, body {
-  background: #ddd;
+  background: #eee no-repeat fixed top left;
   margin:0;
   padding:0; 
 }
 
 #wrapper {
   margin: 0 auto;
+  padding: 2em;
 }
 
 #header {
@@ -13,7 +14,7 @@ html, body {
   font-size: 4em;
   width: 3em;
   margin: 0;
-  padding: 0.5em 0 0 0;
+  padding: 0.5em 0.5em 0 0;
   text-align: center;
 }
 
@@ -32,7 +33,7 @@ html, body {
 
 #content {
   padding: 2em;
-  margin-left: 12em;
+  margin-left: 14em;
 }
 
 #footer {
@@ -41,6 +42,8 @@ html, body {
   text-align: center;
   border-top: 3px solid;
 }
+
+h2 { font-size: 2em; }
 
 td, th {
   padding: .5em 1em;
@@ -61,16 +64,27 @@ div.inquest {
 }
   #last_ruled_on_inquest span {
     display: block;
+    margin-top: 0.2em;
   }
   
 img.xOrNot {
-  max-height: 15em;
-  max-width: 15em;
+  display: block;
+  max-height: 30em;
+  max-width: 30em;
+  box-shadow: 1em 1em 0.5em #888;
+  -moz-box-shadow: 1em 1em 0.5em #888;
+  -webkit-box-shadow: 1em 1em 0.5 #888;
+  padding: 1em;
+  background: #57a;
+  border-radius: 1em;
+  -moz-border-radius: 1em;
+  -webkit-border-radius: 1em;
 }
 
-img.xOrNotSmall {
+img.xOrNot.small {
   max-height: 8em;
   max-width: 8em;
+  margin: 4em 0 0.8em 0;
 }
 
 #inquiry_container {
