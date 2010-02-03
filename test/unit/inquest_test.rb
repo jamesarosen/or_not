@@ -62,7 +62,12 @@ class InquestTest < ActiveSupport::TestCase
     assert_equal 4, @new_inquest.yes_count
     assert_equal 3, @new_inquest.no_count
     assert_equal 2, @new_inquest.not_sure_count
-    assert_equal ({Ruling::YES => 4, Ruling::NO => 3, Ruling::NOT_SURE => 2}), @new_inquest.ruling_histogram_data
+  end
+  
+  test 'an Inquest with no Rulings should have 0-counts for each type of Ruling' do
+    assert_equal 0, @new_inquest.yes_count
+    assert_equal 0, @new_inquest.no_count
+    assert_equal 0, @new_inquest.not_sure_count
   end
   
 end

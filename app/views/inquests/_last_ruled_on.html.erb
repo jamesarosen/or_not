@@ -2,9 +2,8 @@
 <% if inquest.present? %>	
   <%= inquest_image_tag_small(inquest) %>
   <br/>
-  <% hd = inquest.ruling_histogram_data %>
-  Yes: <%= hd[Ruling::YES] || 0 %><br/>
-  No: <%= hd[Ruling::NO] || 0 %><br/>
-  Not Sure: <%= hd[Ruling::NOT_SURE] || 0 %><br/>
+  Yes: <%= inquest.yes_count %><br/>
+  No: <%= inquest.no_count %><br/>
+  Not Sure: <%= inquest.not_sure_count %><br/>
 <% end %>
 </div>
