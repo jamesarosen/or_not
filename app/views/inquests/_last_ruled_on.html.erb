@@ -2,8 +2,8 @@
 <% if inquest.present? %>	
   <%= inquest_image_tag_small(inquest) %>
   <br/>
-  Yes: <%= inquest.yes_count %><br/>
-  No: <%= inquest.no_count %><br/>
-  Not Sure: <%= inquest.not_sure_count %><br/>
+  <%= t('inquests.show.is') -%>: <%= inquest.yes_count %><br/>
+  <%= t('inquests.show.is_not') -%>: <%= inquest.no_count %><br/>
+  <%= t('inquests.show.not_sure') -%>: <%= inquest.not_sure_count %><br/>
 <% end %>
 </div>
