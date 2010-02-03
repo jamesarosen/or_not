@@ -8,7 +8,7 @@ en:
   inquests:
     show:
       title: Are these pants or not? Vote now!
-      is: A filing cabinet
+      is: Pants
       is_not: Not pants
       not_sure: "I'm not sure"
       previous: '&laquo; Previous'
