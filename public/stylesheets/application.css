@@ -6,26 +6,41 @@ html, body {
 
 #wrapper {
   margin: 0 auto;
-  padding: 0 25%;
 }
 
-#header, #footer {
+#header {
+  float: left;
+  font-size: 4em;
+  width: 3em;
+  margin: 0;
+  padding: 0.5em 0 0 0;
+  text-align: center;
+}
+
+  #header img {
+    display: block;
+    max-width: 4em;
+    max-height: 4em;
+    margin: 0;
+    padding: 0;
+  }
+
+#footer {
   padding-bottom: 1.5em;
   padding-top: 1.5em;
 }
 
 #content {
-  clear: both;
-  padding-bottom: 1.5em;
-  padding-top: 1.5em;
+  padding: 2em;
+  margin-left: 12em;
 }
 
 #footer {
-  clear: both;
   font-size: 1.5em;
+  clear: both;
+  text-align: center;
+  border-top: 3px solid;
 }
-
-h1 { font-size: 2em; }
 
 td, th {
   padding: .5em 1em;

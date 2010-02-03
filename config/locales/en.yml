@@ -1,21 +1,21 @@
 en:
   site:
-    title: Filing Cabinet or not?
+    title: Pants or Not?
     about: "I don't get it. What's going on here?"
     issues_link:
       text: Got Beef?
       url: http://github.com/jamesarosen/or_not/issues
   inquests:
     show:
-      title: Is this a filing cabinet or not? Vote now!
+      title: Are these pants or not? Vote now!
       is: A filing cabinet
-      is_not: Not a filing cabinet
+      is_not: Not pants
       not_sure: "I'm not sure"
       previous: '&laquo; Previous'
       next: 'Next &raquo;'
-      new: New inquiry
+      new: Poll the audience
     new:
-      title: "Not sure whether it's a filing cabinet or not?"
+      title: "Not sure whether they're pants or not?"
       submit: Poll the audience
     none:
       body: "Sorry, there aren't any inquests you haven't voted on. Maybe you'd like to {{link}}?"
@@ -28,7 +28,8 @@ en:
       title: The people have spoken.
   pages:
     not_found:
-      title: "Dude, where's your filing cabinet?"
+      title: "Dude, where are your pants?"
+      text: "Error 404: The pants you are looking for do not exist."
   activerecord:
     models:
       inquest: Inquest
